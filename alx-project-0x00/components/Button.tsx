@@ -18,4 +18,3 @@ export const MediumRoundedFullButton = () => <Button title="Medium Rounded Full 
 export const LargeRoundedFullButton = () => <Button title="Large Rounded Full Button" styles="text-xl rounded-full" />;
 
 export default Button;
-
