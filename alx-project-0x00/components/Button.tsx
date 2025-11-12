@@ -1,43 +1,20 @@
 import React from "react";
-import { ButtonProps } from "@/interfaces";
+import { ButtonProps } from "@/interfaces/index";
 
-const Button: React.FC<ButtonProps> = ({ title, size, shape }) => {
-  let sizeClasses = "";
-  let shapeClasses = "";
-
-  // Size styles
-  switch (size) {
-    case "small":
-      sizeClasses = "px-3 py-1 text-sm";
-      break;
-    case "medium":
-      sizeClasses = "px-4 py-2 text-base";
-      break;
-    case "large":
-      sizeClasses = "px-6 py-3 text-lg";
-      break;
-  }
-
-  // Shape styles
-  switch (shape) {
-    case "rounded-sm":
-      shapeClasses = "rounded-sm";
-      break;
-    case "rounded-md":
-      shapeClasses = "rounded-md";
-      break;
-    case "rounded-full":
-      shapeClasses = "rounded-full";
-      break;
-  }
-
+export const Button: React.FC<ButtonProps> = ({ title, styles }) => {
   return (
-    <button
-      className={`bg-blue-500 text-white ${sizeClasses} ${shapeClasses} hover:bg-blue-600 transition`}
-    >
+    <button className={`px-4 py-2 ${styles}`}>
       {title}
     </button>
   );
 };
+
+export const SmallRoundedButton = () => <Button title="Small Rounded Button" styles="text-sm rounded-sm" />;
+export const MediumRoundedButton = () => <Button title="Medium Rounded Button" styles="text-base rounded-md" />;
+export const LargeRoundedButton = () => <Button title="Large Rounded Button" styles="text-xl rounded-full" />;
+
+export const SmallRoundedFullButton = () => <Button title="Small Rounded Full Button" styles="text-sm rounded-full" />;
+export const MediumRoundedFullButton = () => <Button title="Medium Rounded Full Button" styles="text-base rounded-full" />;
+export const LargeRoundedFullButton = () => <Button title="Large Rounded Full Button" styles="text-xl rounded-full" />;
 
 export default Button;
